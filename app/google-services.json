@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "798557490361",
+    "firebase_url": "https://ubereatsclone-bb731.firebaseio.com",
+    "project_id": "ubereatsclone-bb731",
+    "storage_bucket": "ubereatsclone-bb731.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798557490361:android:e0ac73dcd84cf550",
+        "android_client_info": {
+          "package_name": "com.example.ubereatsclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798557490361-q74vtghdeitce3jnkaud2f856gi2qb5e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ubereatsclone",
+            "certificate_hash": "ce68d7e72682a1b6e945a1639ea0dde11431b246"
+          }
+        },
+        {
+          "client_id": "798557490361-cr6pdcjag54umqkdg44dlc5tgataqqmn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxeepVHgwVcCgqjKpH3opDsDOAMJ-1nWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798557490361-cr6pdcjag54umqkdg44dlc5tgataqqmn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
