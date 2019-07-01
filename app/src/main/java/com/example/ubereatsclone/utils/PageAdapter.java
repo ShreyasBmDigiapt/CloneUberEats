@@ -1,30 +1,26 @@
 package com.example.ubereatsclone.utils;
 
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.ubereatsclone.R;
 import com.squareup.picasso.Picasso;
 
-public class PageAdapter extends androidx.viewpager.widget.PagerAdapter {
+public class PageAdapter extends PagerAdapter {
 
-    private Context context;
     private String[] images;
-
-    private static final String TAG = "PageAdapter1";
-
+    private Context context;
     private ImageView mPagerImage;
 
-    public PageAdapter(Context context, String[] images) {
-        this.context = context;
+    public PageAdapter(String[] images, Context context) {
         this.images = images;
+        this.context = context;
     }
 
     @Override
@@ -34,25 +30,21 @@ public class PageAdapter extends androidx.viewpager.widget.PagerAdapter {
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return false;
+        return view.equals(object);
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View itemView = inflater.inflate(R.layout.pager_image_layout, container, false);
-
+        View itemView  = LayoutInflater.from(context).inflate(R.layout.pager_image_layout, container, false);
         mPagerImage = itemView.findViewById(R.id.pager_image);
-
-        try {
-            Picasso.with(context).load(images[position]).error(R.drawable.back).into(mPagerImage);
-        }catch (Exception e){
-            Log.d(TAG, "instantiateItem: "+e.getMessage());
-        }
+        Picasso.with(context).load(images[position]).into(mPagerImage);
         container.addView(itemView);
-
         return itemView;
+    }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        container.removeView((View) object);
     }
 }
