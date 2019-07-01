@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ubereatsclone.modelClass.DecisionModel;
 import com.example.ubereatsclone.modelClass.MainModel;
 import com.example.ubereatsclone.modelClass.RestroPOJOsingle;
 import com.example.ubereatsclone.utils.MainAdapter;
@@ -25,8 +26,8 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    public ArrayList<Object> list = new ArrayList<>();
-    private ArrayList<RestroPOJOsingle> li = new ArrayList<>();
+    private ArrayList<MainModel> list;
+    private ArrayList<RestroPOJOsingle> innerList;
     private String[] images = {
             "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -48,95 +49,48 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        DecisionModel model = new DecisionModel();
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mMainRecyclerView = view.findViewById(R.id.mainRecyclerView);
+
+
+        innerList = new ArrayList<>();
+        innerList.add(new RestroPOJOsingle("1234", images[1],"Restro1", "images","12:20" ,"4.1"));
+        innerList.add(new RestroPOJOsingle("2345", images[1],"Restro2", "images","12:20" ,"4.2"));
+        innerList.add(new RestroPOJOsingle("3456", images[1],"Restro3", "images","12:20" ,"4.3"));
+        innerList.add(new RestroPOJOsingle("4567", images[2],"Restro4", "images","12:20" ,"4.4"));
+        innerList.add(new RestroPOJOsingle("5678", images[1],"Restro5", "images","12:20" ,"4.5"));
+        Log.d(TAG, "lists: "+innerList.size());
+
+        list = new ArrayList<>();
+
+
+        list.add(new MainModel(2222, "qwerty", innerList ));
+        list.add(new MainModel(1111, "12345", images[0],"Rest1", "desss", "23:12", "4.3"));
+        list.add(new MainModel(1111, "12345", images[0],"Rest1", "desss", "23:12", "4.3"));
+        list.add(new MainModel(2222, "qwerty", innerList ));
+
+
+
+
+
         adapter = new MainAdapter( getActivity(), list);
         mMainRecyclerView.hasFixedSize();
         mMainRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
-        li.add(new RestroPOJOsingle(
-                        "rerqerereq",
-                        images[0],
-                        "Dish 1",
-                        "sasafasag",
-                        "23: 43 ",
-                        "4.5 star"
-                )
-        );
 
-        li.add(new RestroPOJOsingle(
-                        "rerqerereq",
-                        images[0],
-                        "Dish 1",
-                        "sasafasag",
-                        "23: 43 ",
-                        "4.5 star"
-                )
-        );
-        li.add(new RestroPOJOsingle(
-                        "rerqerereq",
-                        images[0],
-                        "Dish 1",
-                        "sasafasag",
-                        "23: 43 ",
-                        "4.5 star"
-                )
-        );
 
-        list.add(new MainModel(
-                "BVS RESTRO",
-                li
-        ));
-        list.add(new MainModel(
-                "RANDE RESTRO",
-                li
-        ));
-        list.add(new RestroPOJOsingle(
-                "rerqerereq",
-                images[0],
-                "Dish 1",
-                "sasafasag",
-                "23: 43 ",
-                "4.5 star"
-        ));
 
-        list.add(new RestroPOJOsingle(
-                "rerqerereq",
-                images[0],
-                "Dish 1",
-                "sasafasag",
-                "23: 43 ",
-                "4.5 star"
-        ));
+        Log.d(TAG, "onCreateView: "+model.lists().size());
 
-        list.add(new RestroPOJOsingle(
-                "rerqerereq",
-                images[0],
-                "Dish 1",
-                "sasafasag",
-                "23: 43 ",
-                "4.5 star"
-        ));
 
-        list.add(new RestroPOJOsingle(
-                "rerqerereq",
-                images[0],
-                "Dish 1",
-                "sasafasag",
-                "23: 43 ",
-                "4.5 star"
-        ));
 
         mMainRecyclerView.setAdapter(adapter);
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-    }
 
 
 }
