@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {git
         // Inflate the layout for this fragment
 
         DecisionModel model = new DecisionModel();

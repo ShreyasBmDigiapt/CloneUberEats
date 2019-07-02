@@ -15,15 +15,17 @@ public class UberHolder {
     public static class RestroCardHolder extends RecyclerView.ViewHolder {
 
         public ImageView mRestroCardImage;
-        public TextView mRestroCardTitle, mRestroCardDes, mRestroCardTimming, mRestroCardRating;
+        public TextView mRestroCardTitl, mRestroCardDes, mRestroCardTimming, mRestroCardRating;
+        public CardView mRestroCardView;
 
         public RestroCardHolder(@NonNull View itemView) {
             super(itemView);
-            mRestroCardTitle = itemView.findViewById(R.id.restroCardTitle);
+            mRestroCardTitl = itemView.findViewById(R.id.restroCardTitle);
             mRestroCardDes = itemView.findViewById(R.id.restroCardDes);
             mRestroCardImage = itemView.findViewById(R.id.restroCardImage);
             mRestroCardTimming = itemView.findViewById(R.id.restroCardTime);
             mRestroCardRating = itemView.findViewById(R.id.restroCardRating);
+            mRestroCardView = itemView.findViewById(R.id.restroCardView);
         }
     }
 
@@ -39,4 +41,6 @@ public class UberHolder {
             mRecyclerView = itemView.findViewById(R.id.foodRecyclerView);
         }
     }
+
+
 }

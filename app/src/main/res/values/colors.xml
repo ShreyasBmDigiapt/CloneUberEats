@@ -11,4 +11,5 @@
     <color name="active_tab_color">#000000</color>
     <color name="inactive_tab_color">#F1F8E9</color>
     <color name="grey">#EEEEEE</color>
+    <color name="whiteish">#FDFDFD</color>
 </resources>

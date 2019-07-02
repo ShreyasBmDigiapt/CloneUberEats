@@ -4,21 +4,75 @@ import java.util.ArrayList;
 
 public class MainModel {
 
-    private String title;
+    //views
+    public static final int SINGLE_RV = 1111;
+    public static final int MUILTIPLE_RV = 2222;
+
+    private int viewType;
+
+
+
+    //Single recyclerView
+
+    private String id, thumImage, title, description, timmings, ratings;
+
+    public MainModel(int viewType, String id, String thumImage, String title, String description, String timmings, String ratings) {
+        this.viewType = viewType;
+        this.id = id;
+        this.thumImage = thumImage;
+        this.title = title;
+        this.description = description;
+        this.timmings = timmings;
+        this.ratings = ratings;
+    }
+
+    //main recyclerView
+    private String mainTitle;
     private ArrayList<RestroPOJOsingle> mList;
 
 
-
-    public MainModel(String title, ArrayList<RestroPOJOsingle> mList) {
-        this.title = title;
+    public MainModel(int viewType, String mainTitle, ArrayList<RestroPOJOsingle> mList) {
+        this.viewType = viewType;
+        this.mainTitle = mainTitle;
         this.mList = mList;
+
+    }
+    //////////
+
+
+    public String getMainTitle() {
+        return mainTitle;
+    }
+
+    public ArrayList<RestroPOJOsingle> getmList() {
+        return mList;
+    }
+
+    public int getViewType() {
+        return viewType;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getThumImage() {
+        return thumImage;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public ArrayList<RestroPOJOsingle> getmList() {
-        return mList;
+    public String getDescription() {
+        return description;
+    }
+
+    public String getTimmings() {
+        return timmings;
+    }
+
+    public String getRatings() {
+        return ratings;
     }
 }

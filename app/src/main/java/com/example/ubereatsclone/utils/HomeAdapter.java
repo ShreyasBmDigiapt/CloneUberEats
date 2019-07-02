@@ -1,6 +1,7 @@
 package com.example.ubereatsclone.utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ubereatsclone.R;
+import com.example.ubereatsclone.modelClass.MainModel;
 import com.example.ubereatsclone.modelClass.RestroPOJOsingle;
 import com.squareup.picasso.Picasso;
 
@@ -21,6 +23,8 @@ public class HomeAdapter  extends RecyclerView.Adapter<UberHolder.RestroCardHold
 
     private ArrayList<RestroPOJOsingle> mList;
     private Context context;
+
+    private static final String TAG = "HomeAdapter1";
 
     public HomeAdapter(ArrayList<RestroPOJOsingle> mList, Context context) {
         this.mList = mList;
@@ -37,19 +41,12 @@ public class HomeAdapter  extends RecyclerView.Adapter<UberHolder.RestroCardHold
     @Override
     public void onBindViewHolder(@NonNull UberHolder.RestroCardHolder holder, int position) {
         RestroPOJOsingle pojo = mList.get(position);
-
         Picasso.with(context).load(pojo.getThumImage()).into(holder.mRestroCardImage);
-        holder.mRestroCardTitle.setText(pojo.getTitle());
+        holder.mRestroCardTitl.setText(pojo.getTitle());
         holder.mRestroCardDes.setText(pojo.getDescription());
         holder.mRestroCardRating.setText(pojo.getRatings());
         holder.mRestroCardTimming.setText(pojo.getTimmings());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, "UberEats", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 

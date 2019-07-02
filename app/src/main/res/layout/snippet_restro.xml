@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="0dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/restroCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        android:elevation="20dp"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +37,7 @@
                 android:text="restroCardTitle"
                 android:textColor="@color/black"
                 android:layout_marginTop="10dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:layout_marginLeft="11dp"/>
 
             <TextView
@@ -39,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="restroCardTitle"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:layout_marginLeft="11dp"
                 />
 
@@ -57,7 +63,7 @@
                     android:text="25-35mins"
                     android:background="@color/grey"
                     android:paddingHorizontal="5dp"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     />
 
@@ -68,10 +74,18 @@
                     android:text="5.0 * (500+)"
                     android:background="@color/grey"
                     android:paddingHorizontal="5dp"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Special Description"
+                android:textSize="14sp"
+                android:layout_marginLeft="11dp"
+                android:paddingBottom="7dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
