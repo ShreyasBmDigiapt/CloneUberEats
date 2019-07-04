@@ -7,35 +7,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:elevation="6dp"
+        android:theme="@style/Theme.Design.NoActionBar">
+
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
    <ImageView
-       android:id="@+id/offerImageView"
+       android:id="@+id/offerMainImage"
        android:layout_width="match_parent"
        android:layout_height="120dp"
-       android:scaleType="centerCrop"/>
+       android:scaleType="centerCrop"
+       android:background="#FCE4EC"
+       app:layout_collapseMode="parallax"/>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
 
     <com.nshmura.recyclertablayout.RecyclerTabLayout
         android:id="@+id/offerRTL"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="120dp"
-        rtl_tabIndicatorColor="?attr/colorAccent"
-        rtl_tabIndicatorHeight="2dp"
-        rtl_tabBackground="?attr/selectableItemBackground"
-        rtl_tabTextAppearance="@android:style/TextAppearance.Small"
-        rtl_tabSelectedTextColor="?android:textColorPrimary"
-        rtl_tabMinWidth="72dp"
-        rtl_tabMaxWidth="264dp"
-        rtl_tabPaddingStart="12dp"
-        rtl_tabPaddingTop="0dp"
-        rtl_tabPaddingEnd="12dp"
-        rtl_tabPaddingBottom="0dp"
-        rtl_tabPadding="0dp"/>
+        android:layout_height="50dp"
+        android:background="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/offerViewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"/>
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        />
+
+
+
+
+
 
 
 

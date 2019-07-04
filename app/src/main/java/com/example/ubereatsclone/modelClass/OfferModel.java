@@ -4,7 +4,7 @@ public class OfferModel {
 
     private String offerImageUrl, offerSingleTitle, offerSingleSubTitle, offerSingleTime, offerSingleRatings;
 
-    public OfferModel(String offerImageUrl, String offerSingleTitle, String offerSingleSubTitle, String offerSingleTime, String offerSingleRatings) {
+    public OfferModel( String offerImageUrl, String offerSingleTitle, String offerSingleSubTitle, String offerSingleTime, String offerSingleRatings) {
         this.offerImageUrl = offerImageUrl;
         this.offerSingleTitle = offerSingleTitle;
         this.offerSingleSubTitle = offerSingleSubTitle;

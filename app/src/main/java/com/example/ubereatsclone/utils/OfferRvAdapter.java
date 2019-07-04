@@ -1,7 +1,6 @@
 package com.example.ubereatsclone.utils;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,23 +8,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import com.example.ubereatsclone.R;
+import com.example.ubereatsclone.modelClass.OfferMainImagePosition;
 import com.example.ubereatsclone.modelClass.OfferModel;
-import com.nshmura.recyclertablayout.RecyclerTabLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class OfferRTLAdapter extends RecyclerView.Adapter<OfferRTLAdapter.OfferHolder> {
+public class OfferRvAdapter extends RecyclerView.Adapter<OfferRvAdapter.OfferHolder> {
 
     private ArrayList<OfferModel> mList;
     private Context context;
+    private int pos;
 
-    public OfferRTLAdapter(ArrayList<OfferModel> mList, Context context) {
+    public OfferRvAdapter(ArrayList<OfferModel> mList, Context context) {
         this.mList = mList;
         this.context = context;
     }
@@ -66,6 +64,8 @@ public class OfferRTLAdapter extends RecyclerView.Adapter<OfferRTLAdapter.OfferH
             mTvOfferSubTitle = itemView.findViewById(R.id.singleOfferSubtitle);
             mTvOfferTime = itemView.findViewById(R.id.offerSingleTime);
             mTvOfferRating = itemView.findViewById(R.id.offerSingleRating);
+
+
         }
     }
 }

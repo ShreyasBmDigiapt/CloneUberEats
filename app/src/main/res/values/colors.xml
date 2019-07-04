@@ -14,4 +14,7 @@
     <color name="whiteish">#FDFDFD</color>
     <color name="dark_grey">#B3AEAE</color>
     <color name="light_grey">#C7C5C5</color>
+    <color name="redish_grey">#EBE2E2</color>
+    <color name="grey_line">#FFDDDDDD</color>
+    <color name="dark_redish_grey">#C5BCBC</color>
 </resources>
