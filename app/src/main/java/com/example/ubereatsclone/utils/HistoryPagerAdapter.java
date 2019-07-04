@@ -1,4 +1,4 @@
 package com.example.ubereatsclone.utils;
 
-public class OfferRTLAdapter {
+public class HistoryPagerAdapter {
 }
