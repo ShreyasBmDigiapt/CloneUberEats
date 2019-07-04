@@ -1,17 +1,26 @@
 package com.example.ubereatsclone.modelClass;
 
+import androidx.viewpager.widget.ViewPager;
+
 import java.util.ArrayList;
 
 public class MainModel {
 
     //views
+    public static final int VIEWPAGER = 0000;
     public static final int SINGLE_RV = 1111;
     public static final int MUILTIPLE_RV = 2222;
 
+
     private int viewType;
 
+    //ViewPager
+   private ArrayList<ImageObjects> imageList;
 
-
+    public MainModel(int viewType, ArrayList<ImageObjects> imageList) {
+        this.viewType = viewType;
+        this.imageList = imageList;
+    }
     //Single recyclerView
 
     private String id, thumImage, title, description, timmings, ratings;
@@ -39,6 +48,10 @@ public class MainModel {
     }
     //////////
 
+
+    public ArrayList<ImageObjects> getImageList() {
+        return imageList;
+    }
 
     public String getMainTitle() {
         return mainTitle;

@@ -14,8 +14,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.ubereatsclone.R;
+import com.example.ubereatsclone.modelClass.DecisionModel;
 import com.example.ubereatsclone.modelClass.MainModel;
 import com.example.ubereatsclone.modelClass.RestroPOJOsingle;
 import com.squareup.picasso.Picasso;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 
 import static com.example.ubereatsclone.modelClass.MainModel.MUILTIPLE_RV;
 import static com.example.ubereatsclone.modelClass.MainModel.SINGLE_RV;
+import static com.example.ubereatsclone.modelClass.MainModel.VIEWPAGER;
 
 public class MainAdapter extends RecyclerView.Adapter {
 
@@ -40,6 +43,9 @@ public class MainAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemViewType(int position) {
         switch (mList.get(position).getViewType()) {
+            case 0000:
+                return VIEWPAGER;
+
             case 1111:
                 return SINGLE_RV;
 
@@ -60,6 +66,11 @@ public class MainAdapter extends RecyclerView.Adapter {
         View view;
 
         switch (viewType) {
+            case VIEWPAGER:
+                view = inflater.inflate(R.layout.view_pager, parent, false);
+                holder = new UberHolder.ViewPagerImage(view);
+                break;
+
             case SINGLE_RV:
                 view = inflater.inflate(R.layout.snippet_restro, parent, false);
                 holder = new UberHolder.RestroCardHolder(view);
@@ -80,6 +91,11 @@ public class MainAdapter extends RecyclerView.Adapter {
 
 
         switch (holder.getItemViewType()) {
+            case VIEWPAGER:
+                UberHolder.ViewPagerImage rHolder0 = (UberHolder.ViewPagerImage) holder;
+                configViewHolder0(rHolder0, mList.get(position));
+                break;
+
             case SINGLE_RV:
                 UberHolder.RestroCardHolder rHolder1 = (UberHolder.RestroCardHolder) holder;
                 Log.d(TAG, "onBindViewHolder: " + mList.size());
@@ -94,8 +110,15 @@ public class MainAdapter extends RecyclerView.Adapter {
         }
     }
 
+    private void configViewHolder0(UberHolder.ViewPagerImage holder, MainModel pojo) {
+        PagerAdapter adapter = new PageAdapter(pojo.getImageList(), context);
+        holder.mViewPager.setAdapter(adapter);
+    }
+
+
     private void configViewHolder1(UberHolder.RestroCardHolder holder, MainModel pojo) {
-        Picasso.with(context).load(pojo.getThumImage()).into(holder.mRestroCardImage);
+
+        Picasso.get().load(pojo.getThumImage()).into(holder.mRestroCardImage);
         holder.mRestroCardTitl.setText(pojo.getTitle());
         holder.mRestroCardDes.setText(pojo.getDescription());
         holder.mRestroCardRating.setText(pojo.getRatings());

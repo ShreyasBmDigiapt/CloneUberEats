@@ -3,45 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:id="@+id/viewPagerLL">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
+        android:id="@+id/homeViewPager"
         android:layout_width="match_parent"
-        android:layout_height="190dp"/>
+        android:layout_height="185dp"/>
 
-    <LinearLayout
-        android:id="@+id/joinUber"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:paddingHorizontal="22dp"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        android:background="@color/white"
-        >
+    <include layout="@layout/join_uber"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Uber"
-            android:drawableLeft="@drawable/small_logo"
-            android:layout_gravity="center"
-            android:drawablePadding="@dimen/default_gap"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:layout_weight="5"/>
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Join now"
-            android:layout_gravity="center"
-            android:layout_weight="5"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:textAlignment="viewEnd"
-            tools:ignore="RtlCompat" />
-    </LinearLayout>
 
 </LinearLayout>

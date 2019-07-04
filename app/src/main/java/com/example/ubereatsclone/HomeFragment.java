@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ubereatsclone.modelClass.DecisionModel;
+import com.example.ubereatsclone.modelClass.ImageObjects;
 import com.example.ubereatsclone.modelClass.MainModel;
 import com.example.ubereatsclone.modelClass.RestroPOJOsingle;
 import com.example.ubereatsclone.utils.MainAdapter;
@@ -28,6 +29,7 @@ public class HomeFragment extends Fragment {
 
     private ArrayList<MainModel> list;
     private ArrayList<RestroPOJOsingle> innerList;
+    private ArrayList<ImageObjects> imageObjects;
     private String[] images = {
             "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             "https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -55,6 +57,13 @@ public class HomeFragment extends Fragment {
         mMainRecyclerView = view.findViewById(R.id.mainRecyclerView);
 
 
+        imageObjects = new ArrayList<>();
+        imageObjects.add(new ImageObjects("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"));
+        imageObjects.add(new ImageObjects("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"));
+        imageObjects.add(new ImageObjects("https://cdn.pixabay.com/photo/2018/02/09/21/46/rose-3142529__340.jpg"));
+
+
+
         innerList = new ArrayList<>();
         innerList.add(new RestroPOJOsingle("1234", images[1],"Restro1", "images","12:20" ,"4.1"));
         innerList.add(new RestroPOJOsingle("2345", images[1],"Restro2", "images","12:20" ,"4.2"));
@@ -65,7 +74,7 @@ public class HomeFragment extends Fragment {
 
         list = new ArrayList<>();
 
-
+        list.add(new MainModel(0000, imageObjects));
         list.add(new MainModel(2222, "qwerty", innerList ));
         list.add(new MainModel(1111, "12345", images[0],"Rest1", "desss", "23:12", "4.3"));
         list.add(new MainModel(1111, "12345", images[0],"Rest1", "desss", "23:12", "4.3"));

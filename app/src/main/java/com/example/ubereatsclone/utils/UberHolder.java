@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.ubereatsclone.R;
 
@@ -39,6 +40,44 @@ public class UberHolder {
 
             title = itemView.findViewById(R.id.foodTitle);
             mRecyclerView = itemView.findViewById(R.id.foodRecyclerView);
+        }
+    }
+
+    public static  class ViewPagerImage extends RecyclerView.ViewHolder {
+        public ViewPager mViewPager;
+
+        public ViewPagerImage(@NonNull View itemView) {
+            super(itemView);
+
+            mViewPager = itemView.findViewById(R.id.homeViewPager);
+
+            //anything to do with viewPager
+        }
+    }
+
+    public static class CategoryHolder extends RecyclerView.ViewHolder {
+
+        public ImageView mCategoryImage;
+        public TextView mCategoryText;
+
+        public CategoryHolder(@NonNull View itemView) {
+            super(itemView);
+
+            mCategoryImage = itemView.findViewById(R.id.categoryImage);
+            mCategoryText = itemView.findViewById(R.id.categoryText);
+        }
+    }
+
+    public  static class WholeCategoryHolder extends RecyclerView.ViewHolder {
+
+        public TextView mCategoryTitle;
+        public RecyclerView mCategoryRV;
+
+        public WholeCategoryHolder(@NonNull View itemView) {
+            super(itemView);
+
+            mCategoryTitle = itemView.findViewById(R.id.categoryTitle);
+            mCategoryRV = itemView.findViewById(R.id.categoryRecyclerView);
         }
     }
 

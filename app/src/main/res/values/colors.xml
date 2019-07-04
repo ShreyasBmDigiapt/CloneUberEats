@@ -12,4 +12,6 @@
     <color name="inactive_tab_color">#F1F8E9</color>
     <color name="grey">#EEEEEE</color>
     <color name="whiteish">#FDFDFD</color>
+    <color name="dark_grey">#B3AEAE</color>
+    <color name="light_grey">#C7C5C5</color>
 </resources>

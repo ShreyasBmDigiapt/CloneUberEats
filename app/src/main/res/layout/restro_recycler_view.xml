@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     android:paddingVertical="15dp"
     android:background="@color/white"
-    android:layout_marginTop="7dp"
-    android:paddingLeft="20dp">
+    android:layout_marginTop="7dp">
 
     <TextView
         android:id="@+id/foodTitle"
@@ -14,7 +13,7 @@
         android:text="Title"
         android:paddingVertical="10dp"
         android:maxWidth="310dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="20dp"
         android:textColor="@color/black"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:elevation="30dp"/>
+       />
 
 
 

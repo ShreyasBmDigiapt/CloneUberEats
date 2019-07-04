@@ -41,7 +41,7 @@ public class HomeAdapter  extends RecyclerView.Adapter<UberHolder.RestroCardHold
     @Override
     public void onBindViewHolder(@NonNull UberHolder.RestroCardHolder holder, int position) {
         RestroPOJOsingle pojo = mList.get(position);
-        Picasso.with(context).load(pojo.getThumImage()).into(holder.mRestroCardImage);
+        Picasso.get().load(pojo.getThumImage()).into(holder.mRestroCardImage);
         holder.mRestroCardTitl.setText(pojo.getTitle());
         holder.mRestroCardDes.setText(pojo.getDescription());
         holder.mRestroCardRating.setText(pojo.getRatings());
